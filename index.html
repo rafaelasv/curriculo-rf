@@ -70,7 +70,7 @@
   <div class="formacao-item">
     <div class="formacao-logo-texto">
       <div class="logo-box">
-        <img src="logo-ifsuldeminas.png" alt="Logo IFSULDEMINAS" />
+        <img src="images/logo-ifsuldeminas.png" alt="Logo IFSULDEMINAS" />
       </div>
       <div class="formacao-info">
         <h3>Técnico em Informática para Internet</h3>
@@ -83,7 +83,7 @@
   <div class="formacao-item">
     <div class="formacao-logo-texto">
       <div class="logo-box">
-        <img src="logo-uninter.png" alt="Logo Uninter" />
+        <img src="images/logo-uninter.png" alt="Logo Uninter" />
       </div>
       <div class="formacao-info">
         <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
@@ -102,24 +102,24 @@
   <div class="portfolio-item">
    
     <div class="portfolio-content">
-      <h3>Nome do Projeto 1</h3>
+      <h3>Gerador de Senhas Aleatórias</h3>
       <p>Descrição breve do projeto que destaca seus pontos principais e tecnologias usadas.</p>
       <a href="https://linkdoprojeto.com" target="_blank" class="btn-live">Ver projeto</a>
     </div>
     <div class="portfolio-image">
-      <img src="preview-projeto1.png" alt="Preview Projeto 1" />
+      <img src="images/projetogeradorsenhas.png" alt="Preview Projeto 1" />
     </div>
     
   </div>
 
   <div class="portfolio-item">
     <div class="portfolio-content">
-      <h3>Nome do Projeto 2</h3>
+      <h3>Relógio</h3>
       <p>Descrição breve do projeto que destaca seus pontos principais e tecnologias usadas.</p>
       <a href="https://linkdoprojeto.com" target="_blank" class="btn-live">Ver projeto</a>
     </div>
     <div class="portfolio-image">
-      <img src="preview-projeto2.png" alt="Preview Projeto 2" />
+      <img src="images/projetorelogio.png" alt="Preview Projeto 2" />
     </div>
   </div>
 </section>
@@ -129,8 +129,23 @@
     <span class="tag">&lt;/Contato&gt;</span>
     <span class="line"></span>
   </h2>
-  <p>Conteúdo da terceira seção...</p>
-  </section>
+  
+  <p>Quer falar comigo? Preencha o formulário abaixo ou me envie um e-mail diretamente!</p>
+
+  <form action="https://formspree.io/f/seu-email" method="POST">
+    <input type="text" name="name" placeholder="Seu nome" required />
+    <input type="email" name="email" placeholder="Seu e-mail" required />
+    <textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea>
+    <button type="submit" class="cta-btn">Enviar</button>
+  </form>
+
+  <p>Ou me encontre nas redes sociais:</p>
+  <ul class="social-links">
+    <li><a href="https://linkedin.com/in/seuperfil" target="_blank">LinkedIn</a></li>
+    <li><a href="https://github.com/seuperfil" target="_blank">GitHub</a></li>
+    <li><a href="https://instagram.com/seuperfil" target="_blank">Instagram</a></li>
+  </ul>
+</section>
 
   <script src="script.js"></script>
 </body>

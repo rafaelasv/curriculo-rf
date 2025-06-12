@@ -15,3 +15,19 @@
       nav.classList.remove("scrolled");
     }
   });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Remove após aparecer (opcional)
+      }
+    });
+  }, {
+    threshold: 0.1 // quando 10% do elemento estiver visível
+  });
+
+  // Seleciona todos os títulos de seção
+  document.querySelectorAll('.section-title').forEach(el => {
+    observer.observe(el);
+  });
