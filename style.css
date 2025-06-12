@@ -39,14 +39,14 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 600px;
-  height: 60px;
+  height: 50px;
 
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
   border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
   display: flex;
   align-items: center;
@@ -55,7 +55,6 @@ body {
   padding: 0 20px;
   z-index: 1000;
 }
-
 
 .pill-nav .container-nav {
   display: flex;
@@ -67,7 +66,7 @@ body {
   padding: 10px 25px;
   border-radius: 50px;
   background: transparent; /* deixa transparente pra "mostrar" o blur da barra */
-  color: #333;
+  color: white;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -76,8 +75,11 @@ body {
 }
 
 .pill-item:hover {
-  background: rgba(255, 255, 255, 0.3);
-  color: #000;
+  background: linear-gradient(90deg, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
 }
 
 .pill-item.active {
@@ -87,6 +89,30 @@ body {
   box-shadow: 0 4px 12px rgba(197, 114, 201, 0.6);
   transition: all 0.3s ease;
   border: none;
+}
+
+/* Hover das abas NÃO ativas: mantém degradê */
+.pill-item:not(.active):hover {
+  background: linear-gradient(90deg, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* Hover da aba ATIVA: texto branco sólido, fundo degrade */
+.pill-item.active:hover {
+  background: linear-gradient(90deg, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  color: white;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+  font-weight: 600;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Imagem apresentação*/
@@ -117,21 +143,21 @@ body {
 }
 
 .intro {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #aaa;
   margin-bottom: 10px;
 }
 
 .nome {
-  font-size: 3.5rem;
+  font-size: 2.9rem;
   font-weight: bold;
   margin: 0;
 }
 
 .gradient-texto {
   background: linear-gradient(to right, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  background-clip: text;
   -webkit-background-clip: text;
-  background-clip: text; /* ← adicione esta linha */
   -webkit-text-fill-color: transparent;
   display: inline;
 }
@@ -143,7 +169,7 @@ body {
 
 .descricao {
   font-family: 'Source Code Pro', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   color: #ccc;
   margin-bottom: 30px;
 }
@@ -171,7 +197,171 @@ body {
   justify-content: center;
 }
 
+section {
+  margin-bottom: 80px; /* espaço entre as seções */
+}
+
 .hero-image img {
   max-width: 100%;
   height: auto;
+}
+  
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+}
+
+.section-title .tag {
+  color: #fff;
+  font-family: 'Fira Code', monospace;
+}
+
+.section-title .line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  border-radius: 1px;
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.line::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #c572c9, transparent);
+  animation: slideLine 2s forwards;
+  border-radius: 1px; /* arredonda as pontas da linha animada */
+}
+
+@keyframes slideLine {
+  to {
+    left: 0;        /* desliza para a posição correta */
+  }
+}
+
+.sobremim-conteudo {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  line-height: 1.5;
+  font-size: 1.0rem;
+  color: #ddd;
+}
+
+.formacao-logo-texto {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logo-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+}
+
+.logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.formacao-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.formacao-info p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+.formacao-info h3 {
+  background: linear-gradient(to right, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portfolio-item {
+  display: flex;
+  gap: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  min-width: 400px;
+  border-radius: 25px;
+  padding: 30px 30px;
+  margin-bottom: 25px;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-image img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.portfolio-content {
+  flex: 1;
+}
+
+.portfolio-content h3 {
+  margin: 0 0 10px;
+  font-weight: 600;
+  background: linear-gradient(to right, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portfolio-content p {
+  margin: 0 0 15px;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.btn-live {
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(to right, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-live:hover {
+  background-color: #00ccb5;
+  color: #000;
 }
