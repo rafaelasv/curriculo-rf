@@ -1,40 +1,177 @@
 body {
-    background: #000;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-  }
+  background: #000;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
   
-  .pill-nav {
-    display: inline-flex;
-    background: #111;
-    border-radius: 50px;
-    padding: 6px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
-  }
-  
-  .pill-item {
-    padding: 10px 25px;
-    border-radius: 50px;
-    color: #ccc;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-  
-  /* Degradê no texto da aba ativa */
-  .pill-item.active {
-    background: #000;
-    color: transparent;
-    background-image: linear-gradient(to right, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
-    -webkit-background-clip: text;
-    background-clip: text;
-    font-weight: bold;
-    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
-  }
-  
-  .pill-item:hover:not(.active) {
-    color: #888;
-  }
-  
+  /*Gradient do fundo do body */
+  background: radial-gradient(
+    circle at center,
+    rgba(85, 0, 120, 0.2) 0%,     /* brilho suave roxo */
+    rgba(0, 0, 0, 0.95) 60%       /* escurecendo para os cantos */
+  ),
+  radial-gradient(
+    circle at 30% 70%,
+    rgba(255, 100, 200, 0.05),
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 70% 30%,
+    rgba(255, 255, 200, 0.03),
+    transparent 60%
+  );
+  background-color: #0a0a12; /* cor base escura */
+  background-blend-mode: screen;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra de navegação em formato de pill*/
+.pill-nav {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 60px;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+
+.pill-nav .container-nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Estilo das abas */
+.pill-item {
+  padding: 10px 25px;
+  border-radius: 50px;
+  background: transparent; /* deixa transparente pra "mostrar" o blur da barra */
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  backdrop-filter: none; /* sem blur */
+}
+
+.pill-item:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+}
+
+.pill-item.active {
+  background: linear-gradient(90deg, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(197, 114, 201, 0.6);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+/* Imagem apresentação*/
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  color: white;
+  padding: 0 5%;
+}
+
+.hero-conteudo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+}
+
+.hero-texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.nome {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.gradient-texto {
+  background: linear-gradient(to right, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  -webkit-background-clip: text;
+  background-clip: text; /* ← adicione esta linha */
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.emoji {
+  color: inherit; /* Para manter a cor original do emoji */
+}
+
+
+.descricao {
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  padding: 12px 24px;
+  background: linear-gradient(to right, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  color: #000;
+  border-radius: 30px;
+  width: 120px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #00ccb5;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
