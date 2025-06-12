@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Passions+Conflict&family=Orbitron&family=Fira+Code&family=Six+Caps" rel="stylesheet"/>
-  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <title>Currículo</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -129,9 +130,13 @@
     <span class="tag">&lt;/Contato&gt;</span>
     <span class="line"></span>
   </h2>
-  
-  <p>Quer falar comigo? Preencha o formulário abaixo ou me envie um e-mail diretamente!</p>
 
+  <div class="contato-texto">
+    <p>Se você procura alguém com dedicação, curiosidade e vontade de crescer, estou pronta para o desafio. 
+      <span class="fale-highlight">Fale comigo!</span> 
+    </p>
+  </div>
+  
   <form action="https://formspree.io/f/seu-email" method="POST">
     <input type="text" name="name" placeholder="Seu nome" required />
     <input type="email" name="email" placeholder="Seu e-mail" required />
@@ -139,12 +144,21 @@
     <button type="submit" class="cta-btn">Enviar</button>
   </form>
 
-  <p>Ou me encontre nas redes sociais:</p>
-  <ul class="social-links">
-    <li><a href="https://linkedin.com/in/seuperfil" target="_blank">LinkedIn</a></li>
-    <li><a href="https://github.com/seuperfil" target="_blank">GitHub</a></li>
-    <li><a href="https://instagram.com/seuperfil" target="_blank">Instagram</a></li>
-  </ul>
+  <div class="redessociais-texto">
+    <p>Ou me encontre nas redes sociais:</p>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://linkedin.com/in/seuperfil" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/seuperfil" target="_blank" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://instagram.com/seuperfil" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
 </section>
 
   <script src="script.js"></script>

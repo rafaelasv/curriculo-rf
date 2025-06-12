@@ -31,7 +31,6 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: white;
-  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -67,7 +66,7 @@ body {
   gap: 20px;
 }
 
-/* Estilo das abas */
+/* estilo das abas da barra*/
 .pill-item {
   padding: 6px 25px;
   border-radius: 50px;
@@ -98,7 +97,7 @@ body {
   border: none;
 }
 
-/* Hover das abas NÃO ativas: mantém degradê */
+/* hover das abas NÃO ativas: mantém degradê */
 .pill-item:not(.active):hover {
   background: linear-gradient(90deg, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
   -webkit-background-clip: text;
@@ -107,7 +106,7 @@ body {
   font-weight: 600;
 }
 
-/* Hover da aba ATIVA: texto branco sólido, fundo degrade */
+/* hover da aba ATIVA: texto branco sólido, fundo degrade */
 .pill-item.active:hover {
   background: linear-gradient(90deg, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
   color: white;
@@ -118,7 +117,7 @@ body {
   font-weight: 600;
 }
 
-/* Imagem apresentação*/
+/* Imagem da home*/
 .hero {
   display: flex;
   align-items: center;
@@ -145,6 +144,7 @@ body {
   justify-content: center;
 }
 
+/*Textos da home */
 .intro {
   font-size: 0.875rem;
   color: #aaa;
@@ -201,6 +201,7 @@ body {
   justify-content: center;
 }
 
+/* Seções */
 section {
   margin-bottom: 80px; /* espaço entre as seções */
 }
@@ -265,6 +266,8 @@ section {
   }
 }
 
+/* Conteúdo das seções */
+ /* seção 1: sobre mim */
 .sobremim-conteudo {
   max-width: 800px;
   margin: 0 auto;
@@ -274,6 +277,7 @@ section {
   color: #ddd;
 }
 
+ /* seção 2: portfólio */
 .formacao-logo-texto {
   display: flex;
   align-items: center;
@@ -318,76 +322,12 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
+ /* seção 3: portfólio */
 .portfolio-item {
   display: flex;
   gap: 20px;
   border-radius: 15px;
-  b/* Container do formulário */
-form {
-  background: rgba(255, 255, 255, 0.1); /* fundo translúcido */
-  backdrop-filter: blur(10px); /* efeito glassmorphism */
-  border-radius: 15px;
-  padding: 20px 30px;
-  max-width: 400px;
-  margin: 20px auto;
-  box-shadow: 0 8px 32px rgba(138, 127, 217, 0.2);
-  color: #eee;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Inputs e textarea */
-form input[type="text"],
-form input[type="email"],
-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0 20px 0;
-  border-radius: 10px;
-  border: none;
-  background: rgba(255, 255, 255, 0.15);
-  color: #f0f0f0;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  outline: none;
-  resize: vertical;
-}
-
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form textarea:focus {
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 8px #8a7fd9;
-}
-
-/* Botão */
-form button.cta-btn {
-  background: linear-gradient(to right, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
-  color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 30px;
-  padding: 14px 28px;
-  cursor: pointer;
-  transition: filter 0.3s ease;
-  width: 100%;
-  max-width: 200px;
-  margin: 0 auto;
-  display: block;
-}
-
-form button.cta-btn:hover {
-  filter: brightness(1.1);
-}
-
-/* Placeholder */
-form input::placeholder,
-form textarea::placeholder {
-  color: #ddd;
-  font-style: italic;
-}
-
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(8px);
   min-width: 400px;
@@ -445,36 +385,42 @@ form textarea::placeholder {
   color: #000;
 }
 
-/* Container do formulário */
+ /* seção 4: contato */
+ /* Container do formulário */
 form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+
   background: rgba(255, 255, 255, 0.1); /* fundo translúcido */
   backdrop-filter: blur(10px); /* efeito glassmorphism */
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 20px 30px;
+  padding: 20px 40px;
   max-width: 400px;
   margin: 20px auto;
   color: #eee;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Inputs e textarea */
+  /* Inputs e text area */
 form input[type="text"],
 form input[type="email"],
 form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0 20px 0;
-  border-radius: 10px;
-  border: none;
-  background: rgba(255, 255, 255, 0.15);
-  color: #f0f0f0;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  outline: none;
-  resize: vertical;
-}
+    width: 90%; 
+    margin-bottom: 20px;
+    padding: 8px 20px;
+    margin: 10px 0 20px 0;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #f0f0f0;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    resize: vertical;
+  }
 
 form input[type="text"]:focus,
 form input[type="email"]:focus,
@@ -483,7 +429,7 @@ form textarea:focus {
   box-shadow: 0 0 8px #8a7fd9;
 }
 
-/* Botão */
+/* Botão do formulário*/
 form button.cta-btn {
   background: linear-gradient(90deg, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
   color: white;
@@ -504,10 +450,82 @@ form button.cta-btn:hover {
   filter: brightness(1.1);
 }
 
-/* Placeholder */
 form input::placeholder,
 form textarea::placeholder {
   color: #ddd;
-  font-family: 'Source Code Pro', sans-serif;;
- font-size: 1srem;
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
 }
+
+.contato-texto {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  line-height: 1.5;
+  font-size: 0.975rem;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* centraliza verticalmente */
+  text-align: center;
+}
+
+.redessociais-texto {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* centraliza verticalmente */
+  text-align: center;
+}
+
+ /* Efeito marca-texto do texto da seção contato */
+.fale-highlight {
+  position: relative;
+  font-weight: 700;
+  color: #fff; /* cor do texto */
+}
+
+.fale-highlight::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.2em;  /* ajusta para ficar atrás do texto */
+  height: 0.8em;
+  width: 100%;
+  background: #f57b9d;
+  z-index: -1;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: highlight-anim 1.2s forwards ease-out;
+}
+
+@keyframes highlight-anim {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Ícones redes sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+  background: linear-gradient(90deg, #8ed0f9, #8a7fd9, #c572c9, #f57b9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text
+}
+
